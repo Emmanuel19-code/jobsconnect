@@ -8,6 +8,7 @@ import CustomSwitch from "../components/customSwich";
 import Google from "../components/google";
 import InputFieldOne from "../components/InputFieldOne";
 import Button from "../components/Button";
+import PasswordInput from "../components/PasswordInput";
 
 const LogIn = ({navigation}) => {
     const [switchValue, setSwitchValue] = useState(false);
@@ -18,14 +19,14 @@ const LogIn = ({navigation}) => {
     <SafeAreaView style={loginStyles.container}>
       <Text style={loginStyles.headerOne}>Let's get you Login!</Text>
       <Text style={loginStyles.headerTwo}>Enter your information below</Text>
-      <Google/>
+      <Google />
       <View style={loginStyles.subContainer}>
         <View style={loginStyles.horinzontalLine}></View>
         <Text style={loginStyles.textOne}>or login with</Text>
         <View style={loginStyles.horinzontalLine}></View>
       </View>
-      <InputFieldOne/>
-      <InputFieldOne/>
+      <InputFieldOne placeholder={"Enter Email"} />
+      <PasswordInput />
       <View
         style={{
           marginTop: 20,
@@ -49,7 +50,7 @@ const LogIn = ({navigation}) => {
           Forgot password?
         </Text>
       </View>
-      <Button navigation={navigation} name={"Login"}/>
+      <Button navigation={navigation} name={"Login"} routname={"dashboard"} />
       <View style={{ justifyContent: "center", marginTop: 12 }}>
         <Text
           style={{
@@ -57,11 +58,11 @@ const LogIn = ({navigation}) => {
             textAlign: "center",
           }}
         >
-          JobsConnect users cookies for{" "}
+          JobsConnect users cookies for
           <Text style={{ color: constantColors.backgroundColor }}>
             analytics,personalize
           </Text>
-          content and{" "}
+          content and
           <Text style={{ color: constantColors.backgroundColor }}>ads.</Text>
           ByUsing JobsConect services, you agree to this use of cookies
         </Text>
@@ -86,7 +87,7 @@ const LogIn = ({navigation}) => {
         >
           Don't have an account?{" "}
         </Text>
-        <Pressable onPress={()=>navigation.navigate("signup")}>
+        <Pressable onPress={() => navigation.navigate("signup")}>
           <Text
             style={{
               color: constantColors.backgroundColor,

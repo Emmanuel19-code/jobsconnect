@@ -1,17 +1,17 @@
-import { View, Text, TextInput, Pressable } from 'react-native'
-import React from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
-import containerStyles from '../styles/constant'
+import { View, Text, TextInput, Pressable } from "react-native";
+import React from "react";
+import { SafeAreaView } from "react-native-safe-area-context";
+import containerStyles from "../styles/constant";
 import Google from "../components/google";
-import HorizontalLine from '../components/horizontalLine';
-import constantColors from '../styles/colors';
-import InputFieldTwo from '../components/InputFieldTwo';
-import InputFieldOne from '../components/InputFieldOne';
-import Button from '../components/Button';
-import PasswordInput from '../components/PasswordInput';
+import HorizontalLine from "../components/horizontalLine";
+import constantColors from "../styles/colors";
+import InputFieldTwo from "../components/InputFieldTwo";
+import InputFieldOne from "../components/InputFieldOne";
+import Button from "../components/Button";
+import PasswordInput from "../components/PasswordInput";
 import Feather from "@expo/vector-icons/Feather";
 
-const SignUp = ({navigation}) => {
+const SignUp = ({ navigation }) => {
   return (
     <SafeAreaView style={containerStyles.container}>
       <Text
@@ -29,7 +29,7 @@ const SignUp = ({navigation}) => {
       />
       <View style={{ display: "flex", flexDirection: "row", marginTop: 20 }}>
         <HorizontalLine />
-        <Text>or</Text>
+        <Text style={{ fontFamily: "Merriweather-Black" }}>or</Text>
         <HorizontalLine />
       </View>
       <View
@@ -37,37 +37,24 @@ const SignUp = ({navigation}) => {
           display: "flex",
           flexDirection: "row",
           marginTop: 5,
-          justifyContent: "space-between",
+          flex: 1,
         }}
       >
-        <View style={{ flex: 1 }}>
-          <Text>First name</Text>
-          <TextInput
-            style={{
-              borderWidth: 1,
-              flex: 1,
-              padding: 5,
-              margin: 2,
-              borderColor: constantColors.borderColor,
-              borderRadius: 5,
-            }}
-          />
-        </View>
+        <InputFieldOne
+          labelname={"Email"}
+          customstyles={{
+            flex: 1,
+            margin: 2,
+          }}
+        />
 
-        <View style={{ flex: 1 }}>
-          <Text>Last name</Text>
-
-          <TextInput
-            style={{
-              borderWidth: 1,
-              flex: 1,
-              padding: 20,
-              margin: 2,
-              borderColor: constantColors.borderColor,
-              borderRadius: 5,
-            }}
-          />
-        </View>
+        <InputFieldOne
+          labelname={"Last name"}
+          customstyles={{
+            flex: 1,
+            margin: 2,
+          }}
+        />
       </View>
       <InputFieldOne
         labelname={"Email"}
@@ -89,6 +76,8 @@ const SignUp = ({navigation}) => {
           marginTop: 10,
         }}
         name={"Next"}
+        routname={"nextsignup"}
+        
       />
       <View
         style={{
@@ -118,6 +107,6 @@ const SignUp = ({navigation}) => {
       </View>
     </SafeAreaView>
   );
-}
+};
 
-export default SignUp
+export default SignUp;

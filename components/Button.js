@@ -3,10 +3,10 @@ import React from 'react'
 import constantColors from '../styles/colors';
 import loginStyles from '../styles/login';
 
-const Button = ({navigation,customstyles,name}) => {
+const Button = ({navigation,customstyles,name,routname}) => {
   return (
     <Pressable
-      onPress={() => navigation.navigate("nextsignup")}
+      onPress={() => navigation.navigate(routname)}
       style={[
         loginStyles.googleContainer,
         {

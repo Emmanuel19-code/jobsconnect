@@ -22,7 +22,7 @@ const NextSignUp = ({navigation}) => {
         Sign up to find work you love
       </Text>
       <InputFieldThree
-        labelname={"Education"}
+        labelname={"School"}
         customstyles={{
           margin: 4,
         }}
@@ -81,6 +81,8 @@ const NextSignUp = ({navigation}) => {
           marginTop: 10,
         }}
         name={"Create my account"}
+        navigation={navigation}
+        routname={"confirm"}
       />
       <View
         style={{

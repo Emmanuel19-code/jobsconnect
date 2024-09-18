@@ -5,8 +5,8 @@ import constantColors from '../styles/colors';
 
 const InputFieldOne = ({customstyles,labelname,showIcon,placeholder}) => {
   return (
-    <View style={{ }}>
-      <Text style={[{ marginLeft: 3 }, customstyles]}>{labelname}</Text>
+    <View style={[customstyles]}>
+      <Text style={[{ marginLeft: 3 }]}>{labelname}</Text>
       <View
         style={[
           {
@@ -20,7 +20,7 @@ const InputFieldOne = ({customstyles,labelname,showIcon,placeholder}) => {
             flexDirection: "row",
             alignItems: "center",
           },
-          customstyles,
+         
         ]}
       >
         {showIcon && showIcon}

@@ -4,7 +4,7 @@ import constantColors from '../styles/colors';
 import Feather from "@expo/vector-icons/Feather";
 import { Picker } from "@react-native-picker/picker";
 
-const InputFieldThree = ({labelname,customstyles}) => {
+const InputFieldThree = ({labelname,customstyles,value}) => {
     const [selectedEducation, setSelectedEducation] = useState();
   return (
     <View>
@@ -12,8 +12,8 @@ const InputFieldThree = ({labelname,customstyles}) => {
       <View
         style={[
           {
-            justifyContent: "start",
-            padding:4,
+            
+            padding: 4,
             borderWidth: 1,
             borderColor: constantColors.borderColor,
             borderRadius: 10,
@@ -26,13 +26,17 @@ const InputFieldThree = ({labelname,customstyles}) => {
       >
         <Feather name="mail" size={24} color="#e2e8f0" />
         <Picker
-         style={{ flex:1 }}
+          style={{ flex: 1 }}
           selectedValue={selectedEducation}
           onValueChange={(itemValue, itemIndex) =>
             setSelectedEducation(itemValue)
           }
         >
-          <Picker.Item label="Java" value="java" />
+          <Picker.Item
+            label="school"
+            value="school"
+            style={{ color: "#e2e8f0" }}
+          />
           <Picker.Item label="JavaScript" value="js" />
         </Picker>
       </View>

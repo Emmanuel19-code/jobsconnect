@@ -1,28 +1,30 @@
-import { NavigationContainer } from '@react-navigation/native';
-import StackNavigation from './navigators/stacknavigation';
+import { NavigationContainer } from "@react-navigation/native";
+import StackNavigation from "./navigators/stacknavigation";
 import { useFonts } from "expo-font";
 import * as SplashScreen from "expo-splash-screen";
-import {useEffect} from "react"
+import { useEffect } from "react";
 
 SplashScreen.preventAutoHideAsync();
 
 export default function App() {
-  const [loaded, error] = useFonts({
+  const [fontsLoaded, error] = useFonts({
     "Poppins-Black": require("./fonts/Poppins/Poppins-Black.ttf"),
-    "Merriweather-Black":require("./fonts/Merriweather/Merriweather-Black.ttf")
+    "Merriweather-Black": require("./fonts/Merriweather/Merriweather-Black.ttf"),
   });
 
   useEffect(() => {
-    if (loaded || error) {
+    if (fontsLoaded || error) {
       SplashScreen.hideAsync();
     }
-  }, [loaded, error]);
+  }, [fontsLoaded, error]);
+
+  if (!fontsLoaded) {
+    return null;
+  }
 
   return (
     <NavigationContainer>
-       <StackNavigation/>
+      <StackNavigation />
     </NavigationContainer>
   );
 }
-
-

@@ -5,7 +5,7 @@ const confirmStyles = StyleSheet.create({
          backgroundColor:"white",
          height:"100%",
          padding:20,
-         
+        
      }
 })
 
