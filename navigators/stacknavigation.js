@@ -7,12 +7,19 @@ import SignUp from "../screens/SignUp";
 import NextSignUp from "../screens/NextSignUp";
 import Verification from "../screens/verification";
 import Dashboard from "../screens/dashboard";
+import viewJob from "../screens/viewJob";
+import ViewJob from "../screens/viewJob";
 
 const stack = createNativeStackNavigator();
 
 const StackNavigation = () => {
   return (
-    <stack.Navigator>
+    <stack.Navigator
+      screenOptions={{
+        gestureEnabled: true, 
+        animationEnabled: true,
+      }}
+    >
       <stack.Screen
         name="home"
         component={Home}
@@ -58,6 +65,13 @@ const StackNavigation = () => {
       <stack.Screen
         name="dashboard"
         component={Dashboard}
+        options={{
+          headerShown: false,
+        }}
+      />
+      <stack.Screen
+        name="jobdescription"
+        component={ViewJob}
         options={{
           headerShown: false,
         }}
