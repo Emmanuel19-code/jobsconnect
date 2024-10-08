@@ -15,6 +15,7 @@ import Entypo from "@expo/vector-icons/Entypo";
 import MaterialIcons from "@expo/vector-icons/MaterialIcons";
 import Feather from "@expo/vector-icons/Feather";
 import ViewJovReview from "../components/viewjobReview";
+import AboutCompany from "../components/AboutCompany";
 const ViewJob = ({navigation}) => {
   const [type, setType] = useState("description");
   return (
@@ -296,112 +297,115 @@ const ViewJob = ({navigation}) => {
           </Text>
         </Pressable>
       </View>
-      {type === "description"? (
-        <ScrollView
-          style={{
-            marginTop: 5,
-          }}
-          showsVerticalScrollIndicator={false}
-        >
-          <View
-            style={{
-              backgroundColor: "rgba(242, 242, 242, 1)",
-              padding: 20,
-              borderRadius: 10,
-            }}
-          >
-            <View style={{ 
-               flexDirection:'row',
-               alignItems:'center'
-             }}>
-              <Image source={require('../assets/edit_white.png')}/>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                Job Description
-              </Text>
-            </View>
-            <Text
-              style={{
-                fontSize: 14,
-                marginTop:20
-              }}
-            >
-              In a UX Designer job, you'll need both types of skills to develop
-              the next generation of products. You'll partner with Researchers
-              and Designers to define and deliver new features.
-            </Text>
-          </View>
+      {type === "description" ? (
+  <ScrollView
+    style={{
+      marginTop: 5,
+    }}
+    showsVerticalScrollIndicator={false}
+  >
+    <View
+      style={{
+        backgroundColor: "rgba(242, 242, 242, 1)",
+        padding: 20,
+        borderRadius: 10,
+      }}
+    >
+      <View style={{ 
+         flexDirection: 'row',
+         alignItems: 'center'
+       }}>
+        <Image source={require('../assets/edit_white.png')} />
+        <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+          Job Description
+        </Text>
+      </View>
+      <Text
+        style={{
+          fontSize: 14,
+          marginTop: 20
+        }}
+      >
+        In a UX Designer job, you'll need both types of skills to develop
+        the next generation of products. You'll partner with Researchers
+        and Designers to define and deliver new features.
+      </Text>
+    </View>
 
-          <View
-            style={{
-              backgroundColor: "rgba(242, 242, 242, 1)",
-              padding: 20,
-              borderRadius: 10,
-              marginTop: 10,
-            }}
-          >
-            <View style={{ 
-               flexDirection:'row',
-               alignItems:'center',
-               marginBottom:20
-             }}>
-              <Image source={require('../assets/task_alt_white.png')}/>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                Skills & Requirements
-              </Text>
-            </View>
-            <Text
-              style={{
-                fontSize: 14,
-              }}
-            >
-              3 years experience
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-              }}
-            >
-              Degree in Computer Science, Psychology, Design or any related
-              fields
-            </Text>
-            <Text
-              style={{
-                fontSize: 14,
-                color: "rgba(0, 0, 0, 1)",
-              }}
-            >
-              Proficiency in User Personas, Competitive Analysis, Empathy Maps,
-              and Information Architecture.
-            </Text>
-          </View>
-          <View
-            style={{
-              backgroundColor: "rgba(242, 242, 242, 1)",
-              padding: 20,
-              borderRadius: 10,
-              marginTop: 10,
-            }}
-          >
-            <View>
-              <Text style={{ fontWeight: "bold", fontSize: 18 }}>
-                Skills & Requirements
-              </Text>
-            </View>
-            <Text>3 years experience</Text>
-            <Text>
-              Degree in Computer Science, Psychology, Design or any related
-              fields
-            </Text>
-            <Text>
-              Proficiency in User Personas, Competitive Analysis, Empathy Maps,
-              and Information Architecture.
-            </Text>
-          </View>
-        </ScrollView>
-      )
-      :
-      <ViewJovReview/>
-      }
+    <View
+      style={{
+        backgroundColor: "rgba(242, 242, 242, 1)",
+        padding: 20,
+        borderRadius: 10,
+        marginTop: 10,
+      }}
+    >
+      <View style={{ 
+         flexDirection: 'row',
+         alignItems: 'center',
+         marginBottom: 20
+       }}>
+        <Image source={require('../assets/task_alt_white.png')} />
+        <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+          Skills & Requirements
+        </Text>
+      </View>
+      <Text
+        style={{
+          fontSize: 14,
+        }}
+      >
+        3 years experience
+      </Text>
+      <Text
+        style={{
+          fontSize: 14,
+        }}
+      >
+        Degree in Computer Science, Psychology, Design or any related
+        fields
+      </Text>
+      <Text
+        style={{
+          fontSize: 14,
+          color: "rgba(0, 0, 0, 1)",
+        }}
+      >
+        Proficiency in User Personas, Competitive Analysis, Empathy Maps,
+        and Information Architecture.
+      </Text>
+    </View>
+    
+    <View
+      style={{
+        backgroundColor: "rgba(242, 242, 242, 1)",
+        padding: 20,
+        borderRadius: 10,
+        marginTop: 10,
+      }}
+    >
+      <View>
+        <Text style={{ fontWeight: "bold", fontSize: 18 }}>
+          Skills & Requirements
+        </Text>
+      </View>
+      <Text>3 years experience</Text>
+      <Text>
+        Degree in Computer Science, Psychology, Design or any related
+        fields
+      </Text>
+      <Text>
+        Proficiency in User Personas, Competitive Analysis, Empathy Maps,
+        and Information Architecture.
+      </Text>
+    </View>
+  </ScrollView>
+) : type === "company" ? (
+  <AboutCompany />
+) : (
+  <ViewJovReview />
+)}
+
       <View
         style={{
           flexDirection: "row",
@@ -441,6 +445,7 @@ const ViewJob = ({navigation}) => {
             alignItems: "center",
             justifyContent: "center",
           }}
+          onPress={()=>navigation.navigate("application")}
         >
           <Text
             style={{

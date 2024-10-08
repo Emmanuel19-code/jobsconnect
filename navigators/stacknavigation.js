@@ -9,6 +9,7 @@ import Verification from "../screens/verification";
 import Dashboard from "../screens/dashboard";
 import viewJob from "../screens/viewJob";
 import ViewJob from "../screens/viewJob";
+import ApplicationDetails from "../screens/ApplicationDetails";
 
 const stack = createNativeStackNavigator();
 
@@ -75,6 +76,13 @@ const StackNavigation = () => {
         options={{
           headerShown: false,
         }}
+      />
+      <stack.Screen
+       name="application"
+       component={ApplicationDetails}
+       options={{
+         headerShown:false
+       }}
       />
     </stack.Navigator>
   );
